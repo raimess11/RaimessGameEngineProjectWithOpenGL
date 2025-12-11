@@ -40,6 +40,7 @@ extern GLfloat vertices[];
 extern GLuint indices[];
 
 extern bool isDebugMode;
+extern bool useHighPeformaceGPU;
 
 // File outputs
 extern std::ofstream fileOut;

@@ -1,28 +1,30 @@
-#include "Main.h"
+#include <Engine/Main.h>
 
 
-#include "Game.h"
-#include "PhysicEngine.h"
-#include "EventHandler.h"
-#include "Render.h"
+#include <Game/Game.h>
+#include <Engine/PhysicEngine.h>
+#include <Engine/EventHandler.h>
+#include <Engine/Render.h>
 
 using namespace std;
 using namespace chrono;
 
+
+const GLuint SCREEN_WIDTH = 640;
+const GLuint SCREEN_HEIGHT = 640;
+float fps = 120;
+
+bool isDebugMode;
+#define useHighPeformaceGPU 0;
+
 #ifdef _WIN32
+#if USE_HIGH_PERFORMANCE_GPU == 1
 extern "C" {
     __declspec(dllexport) unsigned long NvOptimusEnablement = 1;               // NVIDIA laptops
     __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;        // AMD laptops
 }
 #endif
-
-const GLuint SCREEN_WIDTH = 640;
-const GLuint SCREEN_HEIGHT = 640;
-float fps = 60;
-
-bool isDebugMode;
-
-//_terminate variable
+#endif
 
 ofstream fileOut("output.txt");
 ofstream fileErr("error.txt");
@@ -64,7 +66,6 @@ int _setup() {
     }
 
     glfwSetKeyCallback(window, key_callback);
-
     return 1;
 }
 

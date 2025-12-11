@@ -1,6 +1,6 @@
-#include "Render.h"
-#include "Shader.h"
-#include "Main.h"
+#include <Engine/Render.h>
+#include <Asset/Shader.h>
+#include <Engine/Main.h>
 
 using namespace std;
 using namespace chrono;
@@ -65,7 +65,7 @@ void _draw() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     // Shader
-    shader = std::move(Shader("default.vert", "default.frag"));
+    shader = std::move(Shader("Asset/default.vert", "Asset/default.frag"));
     shader.bind();
 }
 
@@ -89,4 +89,5 @@ void _render() {
 
     //glDrawArrays(GL_TRIANGLES, 0, 3);
     glfwSwapBuffers(window);
+
 }

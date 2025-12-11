@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Dev\glfw-3.4.bin.WIN64\include;C:\Dev\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Dev\glfw-3.4.bin.WIN64\include;C:\Dev\glad\include;$(SolutionDir);$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Dev\glfw-3.4.bin.WIN64\include;C:\Dev\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Dev\glfw-3.4.bin.WIN64\include;C:\Dev\glad\include;$(SolutionDir);$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,25 +134,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\Dev\glad\src\glad.c" />
-    <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="PhysicEngine.cpp" />
-    <ClCompile Include="Render.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Engine\EventHandler.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Engine\PhysicEngine.cpp" />
+    <ClCompile Include="Engine\Render.cpp" />
+    <ClCompile Include="Asset\Shader.cpp" />
+    <ClCompile Include="Engine\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Main.h" />
-    <ClInclude Include="PhysicEngine.h" />
-    <ClInclude Include="Render.h" />
-    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Engine\EventHandler.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Engine\Main.h" />
+    <ClInclude Include="Engine\PhysicEngine.h" />
+    <ClInclude Include="Engine\Render.h" />
+    <ClInclude Include="Asset\Shader.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Program Support\Development\glfw-3.3.8.bin.WIN64\glfw-3.3.8.bin.WIN64\lib-vc2022\glfw3.dll" />
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include="Asset\default.frag" />
+    <None Include="Asset\default.vert" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="error.txt" />
