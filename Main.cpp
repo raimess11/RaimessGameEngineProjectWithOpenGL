@@ -1,7 +1,7 @@
 #include "Main.h"
 
 
-#include "GameLogic.h"
+#include "Game.h"
 #include "PhysicEngine.h"
 #include "EventHandler.h"
 #include "Render.h"
@@ -78,7 +78,7 @@ void _mainloop() {
         _render();
         _physicEngine();
         _eventHandler();
-        _gameLogic();
+        _game();
 
         _process_end_time = high_resolution_clock::now();
         _process_duration = duration_cast<milliseconds>(_process_end_time - _process_start_time);
